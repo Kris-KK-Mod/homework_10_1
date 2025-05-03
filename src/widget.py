@@ -23,3 +23,16 @@ def mask_account_card(data: str) -> str:
     else:
         masked = get_mask_card_number(number)
         return f"{name} {masked}"
+
+from datetime import datetime
+
+def get_date(date_str: str) -> str:
+    """
+    Принимает строку вида '2024-03-11T02:26:18.671407'
+    Возвращает строку вида '11.03.2024'
+    """
+    try:
+        dt = datetime.fromisoformat(date_str)
+        return dt.strftime("%d.%m.%Y")
+    except ValueError:
+        return "Ошибка: неверный формат даты"
