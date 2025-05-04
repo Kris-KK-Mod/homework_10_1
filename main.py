@@ -1,5 +1,5 @@
-from src.masks.masking import get_mask_account
-from src.masks.masking import get_mask_card_number
+from src.masks.masks import get_mask_account
+from src.masks.masks import get_mask_card_number
 
 
 def mask_input():
