@@ -1,9 +1,13 @@
-def filter_by_state(data, state='EXECUTED'):
-    return [item for item in data if item.get('state') == state]
+from typing import List, Dict, Literal
 
 
-from typing import List, Dict
+def filter_by_state(
+    data: List[Dict[str, str]],
+    state: Literal["EXECUTED", "PENDING", "CANCELED"] = "EXECUTED",) -> List[Dict[str, str]]:
+    """ Фильтрует список операций по их статусу. """
+    return [item for item in data if item.get("state") == state]
 
 
-def sort_by_date(data: List[Dict], reverse: bool = True) -> List[Dict]:
-    return sorted(data, key=lambda x: x['date'], reverse=reverse)
+def sort_by_date(data: List[Dict[str, str]], ascending: bool = True) -> List[Dict[str, str]]:
+    """ Сортирует список операций по дате. """
+    return sorted(data, key=lambda x: x["date"], reverse=not ascending)
