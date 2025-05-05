@@ -1,5 +1,6 @@
-from src.masks.masks import get_mask_account
-from src.masks.masks import get_mask_card_number
+from src import get_mask_account
+from src import get_mask_card_number
+from datetime import datetime
 
 
 def mask_account_card(data: str) -> str:
@@ -15,7 +16,6 @@ def mask_account_card(data: str) -> str:
     parts = data.split()
     if len(parts) < 2:
         return "Ошибка: строка должна содержать тип и номер"
-
     name = " ".join(parts[:-1])  # Тип карты или слово "Счет"
     number = parts[-1]           # Сам номер
 
@@ -25,8 +25,6 @@ def mask_account_card(data: str) -> str:
     else:
         masked = get_mask_card_number(number)
         return f"{name} {masked}"
-
-from datetime import datetime
 
 
 def get_date(date_str: str) -> str:
