@@ -12,6 +12,7 @@ def filter_by_state(
 ) -> List[Operation]:
     """
     Фильтрует список операций по их статусу.
+    :rtype: object
     """
     return [item for item in data if item["state"] == state]
 
