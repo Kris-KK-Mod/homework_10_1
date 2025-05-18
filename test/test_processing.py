@@ -1,11 +1,17 @@
+from typing import List
+from typing import Literal
+from typing import TypedDict
+
 import pytest
-from src.processing import filter_by_state, sort_by_date
-from typing import List, Literal, TypedDict
+from src.processing import filter_by_state
+from src.processing import sort_by_date
+
 
 class Operation(TypedDict):
     """Тип для представления банковской операции"""
     state: Literal["EXECUTED", "PENDING", "CANCELED"]
     date: str
+
 
 @pytest.fixture
 def operations_data() -> List[Operation]:
@@ -16,6 +22,7 @@ def operations_data() -> List[Operation]:
         {"state": "EXECUTED", "date": "2024-03-09T08:15:27.123456"},
         {"state": "CANCELED", "date": "2024-03-08T18:30:45.654321"},
     ]
+
 
 @pytest.mark.parametrize(
     "state,expected_count",
@@ -34,6 +41,7 @@ def test_filter_by_state(operations_data: List[Operation], state: str, expected_
     if expected_count > 0:
         assert all(op["state"] == state for op in result)
 
+
 @pytest.mark.parametrize(
     "ascending,expected_first_date",
     [
@@ -46,6 +54,7 @@ def test_sort_by_date(operations_data: List[Operation], ascending: bool, expecte
     """Тестирование сортировки по дате"""
     sorted_ops = sort_by_date(operations_data, ascending=ascending)
     assert sorted_ops[0]["date"].startswith(expected_first_date)
+
 
 @pytest.mark.parametrize(
     "input_data,expected_length",

@@ -1,5 +1,7 @@
 import pytest
-from src.widget import mask_account_card, get_date
+from src.widget import get_date
+from src.widget import mask_account_card
+
 
 @pytest.fixture
 def card_samples():
@@ -8,12 +10,14 @@ def card_samples():
         ("Maestro 1234567890123456", "Maestro 1234 56** **** 3456")
     ]
 
+
 @pytest.fixture
 def account_samples():
     return [
         ("Счет 73654108430135874305", "Счет **4305"),
         ("Account 12345678901234567890", "Account **7890")
     ]
+
 
 @pytest.fixture
 def invalid_samples():
@@ -22,6 +26,7 @@ def invalid_samples():
         ("Card", "Ошибка: строка должна содержать тип и номер")
     ]
 
+
 @pytest.fixture
 def date_samples():
     return [
@@ -29,9 +34,11 @@ def date_samples():
         ("2025-12-31T23:59:59.999999", "31.12.2025")
     ]
 
+
 @pytest.fixture
 def invalid_dates():
     return ["", "invalid-date", "2024/03/11"]
+
 
 @pytest.mark.parametrize(
     "input_str,expected",
@@ -59,6 +66,7 @@ def invalid_dates():
 )
 def test_mask_account_card(input_str, expected):
     assert mask_account_card(input_str) == expected
+
 
 @pytest.mark.parametrize(
     "date_str,expected",

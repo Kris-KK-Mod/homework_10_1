@@ -27,6 +27,26 @@ To install dependencies, run:
 ```bash
 poetry install
 ```
+###### Testing
+This project uses pytest and pytest-cov for testing and coverage.
+```bash
+pytest
+```
+
+```bash
+pytest --cov=src --cov-report=html
+```
+Coverage HTML report will be generated in the htmlcov/ directory.
+Open it with your browser via: htmlcov/index.html.
+
+```bash
+flake8 src/ test/
+mypy src/
+```
+
+```bash
+isort
+```
 
 ###### License
 ```

@@ -1,4 +1,6 @@
-from typing import List, Literal, TypedDict
+from typing import List
+from typing import Literal
+from typing import TypedDict
 
 
 class Operation(TypedDict):
