@@ -9,6 +9,7 @@ from src.processing import sort_by_date
 
 class Operation(TypedDict):
     """Тип для представления банковской операции"""
+
     state: Literal["EXECUTED", "PENDING", "CANCELED"]
     date: str
 
@@ -32,9 +33,13 @@ def operations_data() -> List[Operation]:
         ("CANCELED", 1),
         ("UNKNOWN", 0),
     ],
-    ids=["executed", "pending", "canceled", "unknown"]
+    ids=["executed", "pending", "canceled", "unknown"],
 )
-def test_filter_by_state(operations_data: List[Operation], state: str, expected_count: int):
+def test_filter_by_state(
+    operations_data: List[Operation],
+    state: Literal["EXECUTED", "PENDING", "CANCELED"],  # Исправленный тип
+    expected_count: int,
+) -> None:  # Добавлен возвращаемый тип
     """Тестирование фильтрации по статусу операции"""
     result = filter_by_state(operations_data, state)
     assert len(result) == expected_count
@@ -48,9 +53,11 @@ def test_filter_by_state(operations_data: List[Operation], state: str, expected_
         (True, "2024-03-08"),
         (False, "2024-03-11"),
     ],
-    ids=["ascending", "descending"]
+    ids=["ascending", "descending"],
 )
-def test_sort_by_date(operations_data: List[Operation], ascending: bool, expected_first_date: str):
+def test_sort_by_date(
+    operations_data: List[Operation], ascending: bool, expected_first_date: str
+) -> None:  # Добавлен возвращаемый тип
     """Тестирование сортировки по дате"""
     sorted_ops = sort_by_date(operations_data, ascending=ascending)
     assert sorted_ops[0]["date"].startswith(expected_first_date)
@@ -62,9 +69,9 @@ def test_sort_by_date(operations_data: List[Operation], ascending: bool, expecte
         ([], 0),
         ([{"state": "EXECUTED", "date": "2024-01-01T00:00:00.000000"}], 1),
     ],
-    ids=["empty_list", "single_item"]
+    ids=["empty_list", "single_item"],
 )
-def test_edge_cases(input_data: List[Operation], expected_length: int):
+def test_edge_cases(input_data: List[Operation], expected_length: int) -> None:  # Добавлен возвращаемый тип
     """Тестирование граничных случаев"""
     assert len(filter_by_state(input_data, "EXECUTED")) == (
         expected_length if "EXECUTED" in [op.get("state") for op in input_data] else 0
