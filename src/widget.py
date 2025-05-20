@@ -1,11 +1,13 @@
-from src.masks.masking import get_mask_account, get_mask_card_number
+from datetime import datetime
+
 
 def mask_account_card(data: str) -> str:
     """
-    Принимает строку с типом и номером карты или счета, возвращает строку с замаскированным номером.
-    Примеры:
-    - 'Visa Platinum 7000792289606361'
-    - 'Счет 73654108430135874305'
+    Принимает строку с типом и номером карты/счета, возвращает замаскированную строку.
+    Форматы:
+    - Карта: "Visa Platinum 7000792289606361" → "Visa Platinum 7000 79** **** 6361"
+    - Счет (рус): "Счет 73654108430135874305" → "Счет **4305"
+    - Счет (англ): "Account 12345678901234567890" → "Account **7890"
     """
     if not isinstance(data, str):
         return "Ошибка: входные данные должны быть строкой"
@@ -14,17 +16,21 @@ def mask_account_card(data: str) -> str:
     if len(parts) < 2:
         return "Ошибка: строка должна содержать тип и номер"
 
-    name = " ".join(parts[:-1])  # Тип карты или слово "Счет"
-    number = parts[-1]           # Сам номер
+    name = " ".join(parts[:-1])
+    number = parts[-1]
 
-    if name.lower().startswith("счет"):
-        masked = get_mask_account(number)
-        return f"{name} {masked}"
-    else:
-        masked = get_mask_card_number(number)
-        return f"{name} {masked}"
+    # Для счетов (русских и английских)
+    if name.lower() in ["счет", "account"]:
+        if len(number) < 4:
+            return "Ошибка: номер счёта должен содержать минимум 4 цифры"
+        return f"{name} **{number[-4:]}"
 
-from datetime import datetime
+    # Для карт
+    digits = "".join(filter(str.isdigit, number))
+    if len(digits) < 10:
+        return "Ошибка: номер карты должен содержать минимум 10 цифр"
+    return f"{name} {digits[:4]} {digits[4:6]}** **** {digits[-4:]}"
+
 
 def get_date(date_str: str) -> str:
     """
