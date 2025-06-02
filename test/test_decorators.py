@@ -1,7 +1,8 @@
 import os
+from typing import Any
+
 import pytest
 from src.decorators import log
-from typing import Any
 
 
 # Тестовые функции
@@ -35,7 +36,7 @@ def test_file_logging() -> None:
     with pytest.raises(ValueError):
         failing_func(1, 2)
 
-    with open("test_log.txt", 'r', encoding='utf-8') as f:
+    with open("test_log.txt", "r", encoding="utf-8") as f:
         content = f.read()
         assert "failing_func error" in content
         assert "ValueError" in content

@@ -1,8 +1,13 @@
 import functools
 from datetime import datetime
-from typing import Callable, Any, Optional, TypeVar, Tuple, Dict
+from typing import Any
+from typing import Callable
+from typing import Dict
+from typing import Optional
+from typing import Tuple
+from typing import TypeVar
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 def log(filename: Optional[str] = None) -> Callable[[Callable[..., T]], Callable[..., T]]:
@@ -45,7 +50,7 @@ def log(filename: Optional[str] = None) -> Callable[[Callable[..., T]], Callable
                 raise
             finally:
                 if filename:
-                    with open(filename, 'a', encoding='utf-8') as f:
+                    with open(filename, "a", encoding="utf-8") as f:
                         f.write(f"{datetime.now()} | {log_message}\n")
                 else:
                     print(f"{datetime.now()} | {log_message}")
