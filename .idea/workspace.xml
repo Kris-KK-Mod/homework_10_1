@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="115cf63d-a9f8-4e48-be60-a2bdc1a037dc" name="Changes" comment="add">
+      <change beforePath="$PROJECT_DIR$/.idea/Homework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Homework.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorators/log_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorators/log_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test_log.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="feature/homework_10_1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,6 +44,9 @@
     &quot;accountId&quot;: &quot;f8cba48b-c9e8-4580-82f0-6938256c3075&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -52,17 +58,34 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for test_masks.test_account_masking.executor": "Run",
+    "Python tests.Python tests for test_masks.test_card_masking.executor": "Run",
+    "Python tests.Python tests for test_masks.test_get_mask_account.executor": "Run",
+    "Python tests.Python tests for test_masks.test_get_mask_account_invalid.executor": "Run",
+    "Python tests.Python tests for test_masks.test_get_mask_account_valid.executor": "Run",
+    "Python tests.Python tests for test_masks.test_get_mask_account_whitespace.executor": "Run",
+    "Python tests.Python tests for test_masks.test_get_mask_card_number.executor": "Run",
+    "Python tests.Python tests for test_masks.test_get_mask_card_number_invalid.executor": "Run",
+    "Python tests.Python tests for test_masks.test_get_mask_card_number_valid.executor": "Run",
+    "Python tests.Python tests for test_masks.test_get_mask_card_number_with_non_digits.executor": "Run",
+    "Python tests.Python tests for test_processing.test_edge_cases.executor": "Run",
+    "Python tests.Python tests for test_processing.test_filter_by_state.executor": "Run",
+    "Python tests.Python tests for test_processing.test_sort_by_date.executor": "Run",
+    "Python tests.Python tests for test_widget.test_get_date.executor": "Run",
+    "Python tests.Python tests for test_widget.test_mask_account_card.executor": "Run",
+    "Python tests.Python tests in test_currency.py.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#1 on feature/homework__10__1"
+    "git-widget-placeholder": "feature/currency-conversion"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/masks" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests in test_currency.py">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Homework" />
       <option name="ENV_FILES" value="" />
@@ -85,6 +108,90 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_processing.test_edge_cases" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Homework" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_processing.test_edge_cases&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_processing.test_sort_by_date" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Homework" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_processing.test_sort_by_date&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_widget.test_get_date" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Homework" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_widget.test_get_date&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_widget.test_mask_account_card" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Homework" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_widget.test_mask_account_card&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_currency.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Homework" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/test_external_api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_external_api/test_currency.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests in test_currency.py" />
+        <item itemvalue="Python tests.Python tests for test_widget.test_mask_account_card" />
+        <item itemvalue="Python tests.Python tests for test_widget.test_get_date" />
+        <item itemvalue="Python tests.Python tests for test_processing.test_edge_cases" />
+        <item itemvalue="Python tests.Python tests for test_processing.test_sort_by_date" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
