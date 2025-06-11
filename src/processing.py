@@ -1,4 +1,6 @@
-from typing import List, Literal, TypedDict
+from typing import List
+from typing import Literal
+from typing import TypedDict
 
 
 class Operation(TypedDict):
@@ -12,6 +14,7 @@ def filter_by_state(
 ) -> List[Operation]:
     """
     Фильтрует список операций по их статусу.
+    :rtype: object
     """
     return [item for item in data if item["state"] == state]
 
