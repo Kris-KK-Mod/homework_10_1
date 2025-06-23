@@ -1,3 +1,3 @@
-from ..utils import setup_logger
+from .masks import mask_account_number, mask_card_number
 
-masks_logger = setup_logger("masks", "masks.log")
+__all__ = ['mask_account_number', 'mask_card_number']

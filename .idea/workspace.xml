@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="115cf63d-a9f8-4e48-be60-a2bdc1a037dc" name="Changes" comment="add">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/external_api/currency.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/external_api/currency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/masks/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/masks/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/masks/masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/masks/masks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/file_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/file_operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_masks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test_log.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,11 +77,12 @@
     "Python tests.Python tests in test_currency.py.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/logging"
+    "git-widget-placeholder": "feature/csv-xlsx-support"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/test_utils" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/masks" />
     </key>

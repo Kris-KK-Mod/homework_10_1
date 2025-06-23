@@ -16,12 +16,8 @@ This is a Python project for handling banking operations and transaction process
 
 ### 1. `filter_by_state`
 
-This function filters a list of dictionaries and returns only those entries whose `state` key matches a specified value.
+Filters transactions by status.
 
-#### Signature:
-```python
-filter_by_state(data: List[Dict], state: str = 'EXECUTED') -> List[Dict]
-```
 ###### Example
 ```python
 from src.processing import filter_by_state
@@ -30,11 +26,30 @@ executed_transactions = filter_by_state(transactions, "EXECUTED")
 
 ### 2. `sort_by_date`
 
-Sorts transactions by date in ascending or descending order.
+Sorts transactions by date.
 
-#### Signature:
+###### Example
 ```python
-sort_by_date(data: List[Dict], ascending: bool = True) -> List[Dict]
+from src.processing import sort_by_date
+sorted_transactions = sort_by_date(transactions, ascending=False)
+```
+
+### 3. `process_bank_search`
+
+Searches transactions by description using regular expressions (case insensitive).
+
+```python
+from src.processing import process_bank_search
+result = process_bank_search(transactions, "перевод|payment")
+```
+
+### 4. `process_bank_operations`
+
+Counts operations by specified categories.
+
+```python
+from src.processing import process_bank_operations
+stats = process_bank_operations(transactions, ["перевод", "вклад"])
 ```
 
 ## Generators Module
@@ -84,12 +99,8 @@ Logs function execution details (100% coverage).
 from src.decorators import log
 
 @log(filename="operations.log")
-def process_transaction(amount: float):
-    # Transaction processing logic
-    return amount * 1.1
-
-# Outputs to file:
-# 2023-11-15 14:30:00 | process_transaction ok | Execution time: 0.002s | Result: 110.0 | Inputs: (100.0,), {}
+def process_data(data):
+    return len(data)
 ```
 
 ###### Features:
@@ -103,6 +114,38 @@ def process_transaction(amount: float):
 - Supports both file and console output
 
 - Preserves original function metadata
+
+## Data format support
+
+The system now supports:
+
+- JSON (`operation.json`)
+- CSV (`transactions.csv`)
+- Excel (`transactions_excel.xlsx`)
+
+
+```python
+from src.utils.file_operators import read_json_file
+from src.utils.file_readers import read_csv_file, read_excel_file
+
+json_data = read_json_file("data/operation.json")
+csv_data = read_csv_file("data/transactions.csv")
+excel_data = read_excel_file("data/transactions_excel.xlsx")
+```
+
+## CLI Interface
+
+### The main program provides interactive menu:
+
+- Load transactions (JSON/CSV/Excel)
+- Filter by status
+- Sort by date
+- Search in descriptions 
+- Get category statistics 
+
+```bash
+python main.py
+```
 
 ## Test Coverage
 
@@ -130,6 +173,11 @@ To install dependencies, run:
 
 ```bash
 poetry install
+```
+
+
+```bash
+poetry add pandas-stubs
 ```
 
 ## Development
@@ -171,20 +219,16 @@ This project is licensed under the MIT License.
 
 ##### Project Structure
 
+
 homework/
 ├── src/
-│   ├── __init__.py         # 79% coverage
-│   ├── decorators/         # NEW 100% coverage
-│   │   ├── __init__.py
-│   │   └── log_decorator.py
-│   ├── generators/         # 92% coverage
-│   ├── mask/               # 88% coverage
-│   └── processing.py       # 100% coverage
+│   ├── processing.py       # Core processing functions
+│   ├── masks/              # Masking utilities
+│   ├── generators/         # Data generators
+│   ├── decorators/         # Function decorators
+│   └── utils/              # File operations
 ├── test/
-│   ├── test_decorators.py  # NEW tests
-│   ├── test_generators.py
-│   ├── test_masks.py
-│   ├── test_processing.py
-│   └── test_widget.py
+│   ├── test_processing.py  # Updated with new tests
+│   └── ...                 # Other test files
 ├── pyproject.toml
 └── README.md
